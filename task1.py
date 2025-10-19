@@ -3,7 +3,7 @@ def read_recipes(filename):
     recipes = {}
     with open(filename, 'r', encoding='utf-8') as file:
         while True:
-            # Название блюда
+            # Название блюда.
             dish_name = file.readline()
             while dish_name and dish_name.strip() == "":
                 dish_name = file.readline()
@@ -11,11 +11,11 @@ def read_recipes(filename):
                 break
             dish_name = dish_name.strip()
 
-            # Кол-во ингредиентов
+            # Кол-во ингредиентов.
             ingredients_count = int(file.readline().strip())
             ingredients = []
 
-            # Все ингредиенты
+            # Все ингредиенты.
             for _ in range(ingredients_count):
                 line = file.readline().strip()
                 name, quantity, unit = [part.strip() for part in line.split('|')]
